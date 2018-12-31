@@ -50,7 +50,7 @@ class List extends React.Component {
 
 const items = gql`
 	query {
-		items(order_by: {created_at:desc}) {
+		items(order_by: {created_at:asc}) {
 			id
 			user_id
 			created_at

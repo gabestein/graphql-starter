@@ -22,6 +22,14 @@ class CreateItem extends React.Component {
 			error: false
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleAddClick = this.handleAddClick.bind(this);
+	}
+
+	handleAddClick(e) {
+		e.preventDefault();
+		this.setState({
+			submitted: false
+		});
 	}
 
 	handleSubmit(e) {
@@ -38,11 +46,11 @@ class CreateItem extends React.Component {
 			variables: {
 				objects: [itemData]
 			}
-		}).then(
+		}).then(() => (
 			this.setState({ submitted: true })
-		).catch(
+		)).catch(() => (
 			this.setState({ error: true })
-		);
+		));
 	}
 
 	render() {
@@ -53,7 +61,7 @@ class CreateItem extends React.Component {
 		}
 		if (this.state.submitted) {
 			return (
-				<div>Item submitted. <button type="button">Add another</button></div>
+				<div>Item submitted. <button type="button" onClick={this.handleAddClick}>Add another</button></div>
 			);
 		}
 		return (
@@ -87,7 +95,7 @@ const createItem = gql`
 
 const items = gql`
 	query {
-		items (order_by: {created_at:desc}) {
+		items (order_by: {created_at:asc}) {
 			id
 			user_id
 			created_at
