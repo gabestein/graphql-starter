@@ -1,0 +1,42 @@
+@import '../../lib/styles/mixins.scss';
+
+.home {
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .logo {
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 0 0 1em 1em;
+        padding: 1em;
+        text-align: center;
+        width: 300px;
+        h1, h2, h3 {
+          margin: 0;
+        }
+    }
+
+    @include for-tablet-landscape-up {
+
+    }
+
+    @include for-tablet-portrait-up {
+
+    }
+
+    @include for-phone-only {
+      .background {
+          position: relative;
+          background-size: 600px;
+          min-height: 500px;
+          .logo {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              border-radius: 1em 1em 0 0;
+          }
+      }
+    }
+
+}

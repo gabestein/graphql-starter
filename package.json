@@ -1,0 +1,48 @@
+{
+  "name": "graphql-starter",
+  "version": "0.0.2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js",
+    "dev:lambda": "netlify-lambda serve functions/src",
+    "dev:static": "concurrently --kill-others \"npm run dev\" \"npm run dev:lambda\"",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js",
+    "export": "NODE_ENV=production npm run build && next export && netlify-lambda build functions/src"
+  },
+  "keywords": [],
+  "author": "Gabriel Stein <gabe@ghscommunications.com>",
+  "license": "MIT",
+  "description": "A basic, WIP template for graphql universal (if you want) React sites.",
+  "repository": "https://github.com/gabestein/graphql-starter",
+  "dependencies": {
+    "@blueprintjs/core": "^3.6.0",
+    "@zeit/next-sass": "^1.0.1",
+    "acorn": "^6.0.4",
+    "acorn-jsx": "^5.0.1",
+    "apollo-boost": "^0.1.16",
+    "apollo-link-context": "^1.0.12",
+    "auth0-js": "^9.8.2",
+    "axios": "^0.18.0",
+    "dotenv": "^6.2.0",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "espree": "^4.1.0",
+    "express": "^4.16.3",
+    "graphql": "^14.0.2",
+    "isomorphic-unfetch": "^2.1.1",
+    "netlify-lambda": "^1.1.1",
+    "next": "^7.0.2",
+    "node-sass": "^4.10.0",
+    "react": "^16.7.0",
+    "react-apollo": "^2.1.11",
+    "react-dom": "^16.7.0"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0"
+  }
+}

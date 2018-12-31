@@ -1,0 +1,21 @@
+- args:
+    permission:
+      check:
+        user_id:
+          _eq: X-HASURA-USER-ID
+      columns:
+      - description
+      - name
+      set:
+        user_id: x-hasura-USER-ID
+    role: user
+    table:
+      name: items
+      schema: public
+  type: create_insert_permission
+- args:
+    role: user
+    table:
+      name: items
+      schema: public
+  type: drop_insert_permission

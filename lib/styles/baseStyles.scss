@@ -1,0 +1,36 @@
+@import 'reset.scss';
+@import 'mixins.scss';
+
+body, html {
+  font-family: sans-serif;
+  font-size: 1em;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: serif;
+  font-weight: 300;
+}
+
+.layout {
+  .container {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include for-tablet-landscape-up {
+    body, html {
+      max-width: 900px;
+    }
+  }
+
+  @include for-tablet-portrait-up {
+
+  }
+
+  @include for-phone-only {
+    body, html {
+      max-width: 600px;
+    }
+  }
+}

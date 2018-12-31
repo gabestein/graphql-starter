@@ -1,0 +1,14 @@
+- args:
+    permission:
+      allow_upsert: true
+      check:
+        user_id:
+          _eq: X-HASURA-USER-ID
+      columns:
+      - user_id
+      set: {}
+    role: user
+    table:
+      name: items
+      schema: public
+  type: create_insert_permission
