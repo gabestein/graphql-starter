@@ -117,7 +117,7 @@ The template uses a combination of dot-env and [NextJS runtime config](https://g
 I'm honestly not a big fan of auth0, for a bunch of reasons. But it works. One big issue they currently have is there is simply no way to keep someone logged in on the client on Safari without setting up a custom domain at the same root as your site. See: https://auth0.com/docs/api-auth/token-renewal-in-safari
 
 ### Deployment
-- I've used [Netlify](https://netlify.com) to deploy by setting the build step to `npm run export` and the serving directory to `out`.
+- I've used [Netlify](https://netlify.com) to deploy by setting the build step to `npm run export`, the serving directory to `out`, and setting environment variables for `API_URL`, `AUTH_CLIENT_ID`, `AUTH_DOMAIN`, and `SITE_URL`. 
 - I've liked [Hasura](https://hasura.io) as an easy-to-setup graphQL server solution.
 - Netlify allows you to deploy lambda functions, which can be used to authorize Hasura via [auth0](https://auth0.com/) or any other authentication service.
 - If you're running server-side instead of static, you can use `server.js` to easily serve your own endpoints via Express for Hasura auth.

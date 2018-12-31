@@ -15,9 +15,6 @@ module.exports = withSass({
 			'/': {
 				page: '/'
 			},
-			'/items': {
-				page: '/items'
-			},
 			'/callback': {
 				page: '/callback'
 			},
