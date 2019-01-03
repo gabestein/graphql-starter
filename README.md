@@ -31,13 +31,13 @@ architecture, but is still painful for an individual developer to manage when ap
 The combination of Apollo and React Context makes self-managing a single atom/store with reducers
 unnecessary.
 
-### Minimizing External Service Requirements**
+### Minimizing External Service Requirements
 The project encourages "owning" as much as your own stack as feasible, while still being simple to manage.
 It's not a complete success.
 It relies entirely on [Auth0](https://auth0.com) for authentication.
 Other than that, it can consume any GraphQL endpoint, and be hosted on just about any platform.
 
-### Minimizing API Development Complexity**
+### Minimizing API Development Complexity
 The project encourages the use of a GraphQL service like [Hasura](https://hasura.io) or [Prisma](https://prisma.io).
 These projects, combined with hosting services like Heroku, Digital Ocean, and Amazon Lightsail, make it extremely
 simple to design and deploy scalable, performant APIs with authorization with little configuration or server management required.
@@ -54,7 +54,7 @@ relational database best practices to graphs.
 Thus, developers should have a basic understanding of relational database practices before working with these
 systems.
 
-### Minimizing Build and Deployment Complexity**
+### Minimizing Build and Deployment Complexity
 The project uses NextJS's deployment tools so it can be built and deployed as a server-side-only rendered app (SSR),
 a client-side single page application (SPA), a universal app, or all of the above at once.
 The project can be easily deployed on Heroku, Netlify, Amazon AWS/Lightsail, Digital Ocean, and beyond with
