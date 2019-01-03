@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node server.js",
     "dev:lambda": "netlify-lambda serve functions/src",
-    "dev:static": "concurrently --kill-others \"npm run dev\" \"npm run dev:lambda\"",
+    "dev:functions": "concurrently --kill-others \"npm run dev\" \"npm run dev:lambda\"",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
     "export": "NODE_ENV=production npm run build && next export && netlify-lambda build functions/src"
@@ -14,7 +14,7 @@
   "keywords": [],
   "author": "Gabriel Stein <gabe@ghscommunications.com>",
   "license": "MIT",
-  "description": "A basic, WIP template for graphql universal (if you want) React sites.",
+  "description": "A basic, work in progress template for graphql universal (if you want) React sites.",
   "repository": "https://github.com/gabestein/graphql-starter",
   "dependencies": {
     "@blueprintjs/core": "^3.6.0",
