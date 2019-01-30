@@ -60,6 +60,23 @@ a client-side single page application (SPA), a universal app, or all of the abov
 The project can be easily deployed on Heroku, Netlify, Amazon AWS/Lightsail, Digital Ocean, and beyond with
 minimal configuration.
 
+### Minimizing Background Job Complexity
+Hasura's event triggers, combined with Netlify Functions, AWS Lambda, or external services, drastically reduce the
+complexity needed to manage background processes. For many tasks, instead of running a tool like Kue or Bull,
+you can simply create an [Event Trigger](https://docs.hasura.io/1.0/graphql/manual/event-triggers/index.html) in the
+Hasura console that calls a webhook to run a background process. Hasura's event triggers include retry and robust
+failure logging out of the box, eliminating the need for queues in many cases. Because Hasura's event triggers use
+built-in postgres triggers, you can even update the database from other places and automatically spin off jobs.
+To schedule jobs, you can use a web-based cron service like AWS Fargate, Google Cloud Scheduler, Heroku Scheduler,
+or simply IFTTT or Zapier to trigger the same webhooks. 
+
+If you need to implement more robust queuing in the future (for example: cancelling jobs), you can easily deploy a
+server with Bull or add a service like CloudAMQP, rewriting your event trigger functions to insert messages into
+those queues instead of running jobs directly.
+
+The downside to this approach is that at the moment, Hasura event triggers cannot be deployed or managed by the cli.
+Presumably, they'll address this limitation in a future update.
+
 ## Tech
 - [NextJS](https://nextjs.org), for the basic React-based universal framework
 - [Express](https://expressjs.com/), for custom server routes if running server-side
@@ -74,7 +91,6 @@ The project is by no means complete.
 It's missing quite a few pieces that are required for most projects.
 Among them:
 
-- Background jobs/processing/queuing.
 - More intelligent state management/hydration for bootstrapping the client in SSR apps via Apollo.
 - Server-side authorization.
 - Clearer understanding of server-side and client-side parts of the app, in particular NextJS's getInitialProps.
