@@ -68,7 +68,7 @@ Hasura console that calls a webhook to run a background process. Hasura's event 
 failure logging out of the box, eliminating the need for queues in many cases. Because Hasura's event triggers use
 built-in postgres triggers, you can even update the database from other places and automatically spin off jobs.
 To schedule jobs, you can use a web-based cron service like AWS Fargate, Google Cloud Scheduler, Heroku Scheduler,
-or simply IFTTT or Zapier to trigger the same webhooks. 
+or simply IFTTT or Zapier to trigger the same webhooks.
 
 If you need to implement more robust queuing in the future (for example: cancelling jobs), you can easily deploy a
 server with Bull or add a service like CloudAMQP, rewriting your event trigger functions to insert messages into
@@ -113,17 +113,17 @@ functions served by NextJS.
 
 ### SSR Dev
 1. Run `npm run dev`
-1. The site will be available at `https://localhost:3000`
+1. The site will be available at `http://localhost:3000`
 
 ### SSR Dev with Functions
 1. Run `npm run dev:functions`
-1. The site will be available at `https://localhost:3000`
-1. Netlify lambda functions will be available at `https://localhost:9000/function-name`
+1. The site will be available at `http://localhost:3000`
+1. Netlify lambda functions will be available at `http://localhost:9000/function-name`
 
 ### Static builds
 1. Run `npm run export`
 1. cd to `out` directory
-1. User `serve` or similar via `serve -p 8080` and browse to `localhost:8080` to see static site
+1. Use a tool like `serve` or similar via `serve -p 8080` and browse to `http://localhost:8080` to see static site
 
 ### Hasura
 1. run `cd db`
