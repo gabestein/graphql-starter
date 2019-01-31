@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, compose } from 'react-apollo';
 import gql from 'graphql-tag';
 import PropTypes from 'prop-types';
-import Item from '../Item/Item';
+import ListItem from './ListItem';
 import CreateItem from '../CreateItem/CreateItem';
 
 import './list.scss';
@@ -40,7 +40,7 @@ class List extends React.Component {
 		return (
 			<div>
 				{this.props.data.items.map((item) => (
-					<Item item={item} key={item.id} handleDelete={this.handleDelete} />
+					<ListItem item={item} key={item.id} handleDelete={this.handleDelete} />
 				))}
 				<CreateItem />
 			</div>

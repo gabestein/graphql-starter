@@ -17,6 +17,11 @@ app.prepare()
 	});
 
 	/** **** CUSTOM SERVER-ONLY ROUTES ***** */
+	server.get('/item/:id', (req, res) =>{
+		const actualPage = '/item';
+		const queryParams = { id: req.params.id };
+		app.render(req, res, actualPage, queryParams);
+	});
 
 	/** **** WILDCARD HANDLERS ***** */
 	server.get('*', (req, res) => {

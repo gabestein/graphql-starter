@@ -20,10 +20,10 @@ module.exports = withSass({
 			},
 			'/about': {
 				page: '/about'
-			}
-			/*	'/item': {
+			},
+			'/item': {
 				page: '/item', query: { id: 0 }
-			} */
+			}
 		};
 	})
 });
