@@ -11,6 +11,7 @@
     "start": "NODE_ENV=production node server.js",
     "export": "NODE_ENV=production npm run build && next export && netlify-lambda build functions/src",
     "pretty": "prettier --write '**/*.js'",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "Gabriel Stein <gabe@ghscommunications.com>",
