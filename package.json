@@ -9,7 +9,8 @@
     "dev:functions": "concurrently --kill-others \"npm run dev\" \"npm run dev:lambda\"",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "export": "NODE_ENV=production npm run build && next export && netlify-lambda build functions/src"
+    "export": "NODE_ENV=production npm run build && next export && netlify-lambda build functions/src",
+    "pretty": "prettier --write '**/*.js'",
   },
   "keywords": [],
   "author": "Gabriel Stein <gabe@ghscommunications.com>",
@@ -26,11 +27,6 @@
     "auth0-js": "^9.11.2",
     "axios": "^0.19.0",
     "dotenv": "^8.0.0",
-    "eslint": "^6.1.0",
-    "eslint-config-airbnb": "^17.1.1",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.14.3",
     "espree": "^6.0.0",
     "express": "^4.17.1",
     "graphql": "^14.4.2",
@@ -43,6 +39,14 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
-    "concurrently": "^4.1.1"
+    "concurrently": "^4.1.1",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "prettier": "1.18.2"
   }
 }

@@ -4,7 +4,7 @@
     "es6": true,
     "commonjs": true
   },
-  "extends": "eslint-config-airbnb",
+  "extends": ["airbnb", "prettier"],
   "parserOptions": {
     "ecmaVersion": 9,
     "ecmaFeatures": {
@@ -12,7 +12,7 @@
     },
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": ["react", "prettier"],
   "rules": {
     "arrow-spacing": 0,
     "arrow-parens": 0,
@@ -33,6 +33,7 @@
     "no-tabs": 0,
     "no-underscore-dangle": 0,
     "operator-linebreak": 0,
+    "prettier/prettier": "error",
     "react/destructuring-assignment": 0,
     "react/jsx-boolean-value": 0,
     "react/jsx-uses-vars": [2],
