@@ -21,7 +21,7 @@
   "dependencies": {
     "@blueprintjs/core": "^3.17.1",
     "@zeit/next-sass": "^1.0.1",
-    "acorn": "^6.2.1",
+    "acorn": "^6.4.1",
     "acorn-jsx": "^5.0.1",
     "apollo-boost": "^0.4.3",
     "apollo-link-context": "^1.0.18",
